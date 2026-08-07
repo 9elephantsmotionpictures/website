@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #000;
+  color: #fff;
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.clients-slider {
+  scrollbar-width: none;
+}
+
+.clients-slider::-webkit-scrollbar {
+  display: none;
+}
+
+/* news and awards */
+@keyframes verticalScroll {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.vertical-scroll {
+  animation: verticalScroll 20s linear infinite;
+}
+
+.vertical-scroll:hover {
+  animation-play-state: paused;
+}
