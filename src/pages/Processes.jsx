@@ -35,7 +35,7 @@ function Processes() {
     <>
       {/* Hero */}
       <section className="bg-[#081C31] py-28 text-white">
-        <div className="mx-auto max-w-7xl px-6 text-center">
+        <div className="mx-auto max-w-7xl mt-5 px-6 text-center">
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-[#D6A63C]">
             9 ELEPHANTS
           </p>
@@ -52,7 +52,7 @@ function Processes() {
       </section>
 
       {/* Process Steps */}
-      <section className="bg-[#F7F5F0] py-24">
+      <section className="bg-[#F7F5F0] py-16 lg:py-24">
         <div className="mx-auto max-w-5xl px-6">
 
           <div className="grid gap-10 lg:gap-30 md:grid-cols-2">

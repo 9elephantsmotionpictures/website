@@ -77,17 +77,17 @@ function Portfolio() {
 
       {/* HERO */}
 
-      <section className="relative overflow-hidden bg-[#081C31] py-24 text-white">
+      <section className="relative overflow-hidden bg-[#081C31] py-28 text-white">
 
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(214,166,60,0.15),transparent_60%)]" />
 
-        <div className="relative mx-auto max-w-7xl px-6 text-center">
+        <div className="relative mt-5 mx-auto max-w-7xl px-6 text-center">
 
           <span className="inline-block rounded-full border border-[#D6A63C]/40 px-4 py-2 text-sm uppercase tracking-[0.3em] text-[#D6A63C]">
             Our Work
           </span>
 
-          <h1 className="mt-8 text-5xl font-bold md:text-7xl">
+          <h1 className="mt-6 text-5xl font-bold md:text-7xl">
             Portfolio
           </h1>
 
@@ -125,7 +125,7 @@ function Portfolio() {
 
       {/* VIDEOS */}
 
-      <section className="py-20">
+      <section className="py-12 lg:py-20">
         <div className="mx-auto max-w-7xl px-6">
 
           <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">

@@ -117,14 +117,14 @@ function Clients() {
           {/* Buttons */}
           <button
             onClick={moveLeft}
-            className="absolute left-5 top-1/2 z-30 -translate-y-1/2 rounded-full bg-white p-3 shadow-lg transition hover:bg-[#D6A63C]"
+            className="absolute left-5 lg:left-10 top-1/2 z-30 -translate-y-1/2 rounded-full bg-white p-3 shadow-lg transition hover:bg-[#D6A63C]"
           >
             <ChevronLeft size={24} />
           </button>
 
           <button
             onClick={moveRight}
-            className="absolute right-5 top-1/2 z-30 -translate-y-1/2 rounded-full bg-white p-3 shadow-lg transition hover:bg-[#D6A63C]"
+            className="absolute right-5 lg:right-10 top-1/2 z-30 -translate-y-1/2 rounded-full bg-white p-3 shadow-lg transition hover:bg-[#D6A63C]"
           >
             <ChevronRight size={24} />
           </button>

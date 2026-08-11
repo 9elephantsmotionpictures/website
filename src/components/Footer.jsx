@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
+import { Phone, Mail, MapPin } from "lucide-react";
 
 function Footer() {
   return (
     <footer className="bg-[#081C31] text-white">
 
-      <div className="mx-auto max-w-7xl px-6 py-14">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 py-14">
 
         <div className="grid gap-14 md:grid-cols-3">
 
@@ -59,19 +60,35 @@ function Footer() {
               Contact
             </h3>
 
-            <div className="space-y-3 text-sm text-white/60">
+            <div className="space-y-4 text-sm text-white/70">
 
-              <p>+91 77689 31234</p>
+              <div className="flex items-start gap-3">
+                <Phone
+                  size={18}
+                  className="mt-0.5 text-[#D6A63C]"
+                />
+                <p>+91 77689 31234</p>
+              </div>
 
-              <p>
-                9elephantsmotionpictures@gmail.com
-              </p>
+              <div className="flex items-start gap-3">
+                <Mail
+                  size={18}
+                  className="mt-0.5 text-[#D6A63C]"
+                />
+                <p>9elephantsmotionpictures@gmail.com</p>
+              </div>
 
-              <p>
-                Jaysingpur, Kolhapur,
-                <br />
-                Maharashtra, India
-              </p>
+              <div className="flex items-start gap-3">
+                <MapPin
+                  size={18}
+                  className="mt-0.5 shrink-0 text-[#D6A63C]"
+                />
+                <p>
+                  Jaysingpur, Kolhapur,
+                  <br />
+                  Maharashtra, India
+                </p>
+              </div>
 
             </div>
           </div>

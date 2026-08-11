@@ -87,7 +87,7 @@ import emailjs from "@emailjs/browser";
   Email: ${formData.email}
   Phone: ${formData.phone}
   Service: ${formData.service}
- Project Details:${formData.message}`;
+  Project Details:${formData.message}`;
 
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
@@ -152,9 +152,6 @@ import emailjs from "@emailjs/browser";
 
             </div>
 
-          </div>
-
-
           {/* BOTTOM LABEL */}
 
           <div className="absolute bottom-8 left-6 hidden items-center gap-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/40 lg:left-10 lg:flex">
@@ -164,6 +161,8 @@ import emailjs from "@emailjs/browser";
             9 ELEPHANTS MEDIAWORKS
 
           </div>
+        </div>
+
 
         </section>
 
@@ -175,7 +174,7 @@ import emailjs from "@emailjs/browser";
 
         <section
           id="contact-form"
-          className="bg-[#F8F7F4] py-24"
+          className="bg-[#F8F7F4] py-16 lg:py-24"
         >
 
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -187,7 +186,7 @@ import emailjs from "@emailjs/browser";
                   LEFT CONTACT INFORMATION
               ================================================== */}
 
-              <div>
+              <div className="md:mt-6">
 
                 {/* LABEL */}
 
@@ -590,7 +589,7 @@ import emailjs from "@emailjs/browser";
             LOCATION SECTION
         ====================================================== */}
 
-        <section className="bg-white py-24">
+        <section className="bg-white py-12">
 
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
 

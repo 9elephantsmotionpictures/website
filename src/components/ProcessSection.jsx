@@ -2,17 +2,17 @@ import { ArrowRight } from "lucide-react";
 
 function ProcessSection() {
     return (
-        <section className="border-y border-[#142B4A]/10 bg-[#F5F1E8] py-24 md:py-32">
+        <section className="border-y border-[#142B4A]/10 bg-[#F5F1E8] py-16 md:py-24">
 
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
-                <div className="grid gap-16 lg:grid-cols-2">
-                    <div>
-                        <p className="mb-5 text-sm font-bold uppercase tracking-[0.3em] text-[#C58A19]">
+                <div className="relative grid gap-10 lg:gap-16 lg:grid-cols-2">
+                    <div className="lg:mt-8">
+                        <p className="mb-6 text-sm font-bold uppercase tracking-[0.3em] text-[#C58A19]">
                             How We Work
                         </p>
 
-                        <h2 className="text-4xl font-semibold leading-tight text-[#142B4A] md:text-6xl">
+                        <h2 className="lg:mt-6 text-4xl font-semibold leading-tight text-[#142B4A] md:text-6xl">
 
                             From an idea
 
@@ -30,21 +30,9 @@ function ProcessSection() {
 
                         </p>
 
-                        <a
-                            href="/processes"
-                            className="mt-8 inline-flex items-center gap-3 font-semibold text-[#142B4A]"
-                        >
-
-                            Explore Our Process
-
-                            <ArrowRight size={18} />
-
-                        </a>
-
                     </div>
 
-
-                    <div className="space-y-0">
+                    <div className="space-y-0 lg:mt-4">
 
                         {[
                             "Discovery Call",
@@ -55,7 +43,7 @@ function ProcessSection() {
 
                             <div
                                 key={step}
-                                className="flex items-center gap-7 border-b border-[#142B4A]/15 py-7"
+                                className="flex items-center gap-7 border-b border-[#142B4A]/15 py-6"
                             >
 
                                 <span className="text-sm font-bold text-[#C58A19]">
@@ -69,9 +57,15 @@ function ProcessSection() {
                             </div>
 
                         ))}
-
                     </div>
 
+                    <a
+                        href="/processes"
+                        className="mt-8 flex items-center justify-center gap-3 font-semibold text-[#142B4A] transition hover:text-[#C58A19] lg:absolute lg:top-0 lg:right-0 lg:mt-0"
+                    >
+                        Explore Our Process
+                        <ArrowRight size={18} />
+                    </a>
                 </div>
 
             </div>

@@ -365,7 +365,7 @@ function Services() {
             CAROUSEL INDICATORS
         ================================================== */}
 
-        <div className="absolute bottom-12 left-6 z-20 flex items-center gap-2 lg:left-10">
+        <div className="absolute bottom-12 left-6 z-20 flex items-center gap-2 lg:left-20">
 
           {heroSlides.map((_, index) => (
             <button
@@ -374,8 +374,8 @@ function Services() {
               aria-label={`Go to slide ${index + 1}`}
               className={`h-1.5 rounded-full transition-all duration-500 ${
                 index === currentSlide
-                  ? "w-12 bg-[#D6A63C]"
-                  : "w-5 bg-white/40 hover:bg-white"
+                  ? "w-8 lg:w-12 bg-[#D6A63C]"
+                  : "w-3 lg:w-5 bg-white/40 hover:bg-white"
               }`}
             />
           ))}
@@ -408,7 +408,7 @@ function Services() {
           INTRO SECTION
       ====================================================== */}
 
-      <section className="relative bg-[#F7F5F0] py-24">
+      <section className="relative bg-[#F7F5F0] py-16 lg:py-24">
 
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
@@ -442,7 +442,7 @@ function Services() {
           SERVICES SECTION
       ====================================================== */}
 
-      <section className="bg-white py-24">
+      <section className="bg-white py-16 lg:py-24">
 
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
 

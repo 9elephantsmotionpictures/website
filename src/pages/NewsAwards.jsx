@@ -1,6 +1,7 @@
   import award1 from "../assets/images/image.png";
   import award2 from "../assets/images/image.png";
   import award3 from "../assets/images/image.png";
+import { useEffect, useRef } from "react";
 
   function NewsAwards() {
     const news = [
@@ -27,6 +28,62 @@
       },
     ];
 
+const newsRef = useRef(null);
+const awardsRef = useRef(null);
+
+const newsIntervalRef = useRef(null);
+const awardsIntervalRef = useRef(null);
+
+const startNewsScroll = () => {
+  newsIntervalRef.current = setInterval(() => {
+    const container = newsRef.current;
+    if (!container) return;
+
+    container.scrollTop += 1;
+
+    if (
+      container.scrollTop >=
+      container.scrollHeight - container.clientHeight
+    ) {
+      container.scrollTop = 0;
+    }
+  }, 20);
+};
+
+const stopNewsScroll = () => {
+  clearInterval(newsIntervalRef.current);
+};
+
+const startAwardsScroll = () => {
+  awardsIntervalRef.current = setInterval(() => {
+    const container = awardsRef.current;
+    if (!container) return;
+
+    container.scrollTop += 1;
+
+    if (
+      container.scrollTop >=
+      container.scrollHeight - container.clientHeight
+    ) {
+      container.scrollTop = 0;
+    }
+  }, 20);
+};
+
+const stopAwardsScroll = () => {
+  clearInterval(awardsIntervalRef.current);
+};
+
+useEffect(() => {
+  startNewsScroll();
+  startAwardsScroll();
+
+  return () => {
+    clearInterval(newsIntervalRef.current);
+    clearInterval(awardsIntervalRef.current);
+  };
+}, []);
+
 
     return (
       <main className="bg-[#FFFDF8]">
@@ -37,7 +94,7 @@
 
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(214,166,60,0.15),transparent_60%)]" />
 
-          <div className="relative mx-auto max-w-7xl px-6 text-center">
+          <div className="relative mt-5 mx-auto max-w-7xl px-6 text-center">
 
             <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-[#D6A63C]">
               Recognition & Achievements
@@ -57,28 +114,36 @@
         </section>
 
         {/* NEWS SECTION */}
-
-       <section className="py-20">
+       <section className="py-10">
         <div className="mx-auto max-w-7xl px-6">
 
           <div className="grid gap-8 lg:grid-cols-2">
 
             {/* NEWS */}
-
             <div className="bg-white p-8">
-
-              <h2 className="mb-6 text-3xl font-bold text-[#142B4A]">++
+              <h2 className="mb-6 text-3xl font-bold text-[#142B4A]">
                 Latest News
               </h2>
 
-              <div className="h-[650px] overflow-hidden">
+              <div className="relative h-[650px] overflow-hidden">
 
-                <div className="vertical-scroll space-y-6">
+                {/* Top Fade */}
+                <div className="pointer-events-none absolute left-0 top-0 z-10 h-3 w-full bg-gradient-to-b from-[#FFFDF8] to-transparent" />
 
-                  {[...news, ...news].map((item, index) => (
+                {/* Bottom Fade */}
+                <div className="pointer-events-none absolute bottom-0 left-0 z-10 h-3 w-full bg-gradient-to-t from-[#FFFDF8] to-transparent" />
+
+                <div
+                  ref={newsRef}
+                  onMouseEnter={stopNewsScroll}
+                  onMouseLeave={startNewsScroll}
+                  className="h-[650px] overflow-y-auto scrollbar-hide space-y-6"
+                >
+
+                  {[...news, ...news, ...news].map((item, index) => (
                     <div
                       key={index}
-                      className="overflow-hidden border border-gray-100 bg-white shadow"
+                      className="overflow-hidden border border-gray-100 bg-white shadow-lg"
                     >
                       <img
                         src={item.image}
@@ -116,14 +181,26 @@
                 Awards & Recognition
               </h2>
 
-              <div className="h-[650px] overflow-hidden">
+              <div className="relative h-[650px] overflow-hidden">
 
-                <div className="vertical-scroll space-y-6">
+                {/* Top Fade */}
+                <div className="pointer-events-none absolute left-0 top-0 z-10 h-3 w-full bg-gradient-to-b from-[#FFFDF8] to-transparent" />
+
+                {/* Bottom Fade */}
+                <div className="pointer-events-none absolute bottom-0 left-0 z-10 h-3 w-full bg-gradient-to-t from-[#FFFDF8] to-transparent" />
+
+
+                <div
+                  ref={awardsRef}
+                  onMouseEnter={stopAwardsScroll}
+                  onMouseLeave={startAwardsScroll}
+                  className="h-[650px] overflow-y-auto scrollbar-hide space-y-6"
+                >
 
                   {[...news, ...news].map((item, index) => (
                     <div
                       key={index}
-                      className="overflow-hidden border border-gray-100 bg-white shadow"
+                      className="overflow-hidden border border-gray-100 bg-white shadow-lg"
                     >
                       <img
                         src={item.image}

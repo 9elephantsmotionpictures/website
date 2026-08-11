@@ -84,9 +84,32 @@ function Navbar() {
      CLOSE MENU
   ====================================================== */
 
+  const [isHoverEnabled, setIsHoverEnabled] = useState(true);
+
   const closeMenu = () => {
     setIsOpen(false);
+    setIsHoverEnabled(false);
+
+    setTimeout(() => {
+      setIsHoverEnabled(true);
+    }, 300);
   };
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+
+    window.addEventListener("resize", checkMobile);
+
+    return () => {
+      window.removeEventListener("resize", checkMobile);
+    };
+  }, []);
 
   return (
     <>
@@ -95,7 +118,7 @@ function Navbar() {
       ====================================================== */}
 
       <header className="fixed left-0 top-0 z-[100] w-full">
-        <nav className="mx-auto flex h-24 max-w-7xl items-center justify-between">
+        <nav className="mx-auto flex h-24 max-w-7xl items-center justify-between px-6 lg:px-8">
 
           {/* =================================================
               LOGO
@@ -104,11 +127,10 @@ function Navbar() {
           <a
             href="/"
             onClick={closeMenu}
-            className={`relative z-[120] flex items-center transition-all duration-500 ${
-              isScrolled
-                ? "-translate-x-20 opacity-0"
-                : "translate-x-0 opacity-100"
-            }`}
+            className={`relative z-[120] flex items-center transition-all duration-500 ${isScrolled
+              ? "-translate-x-20 opacity-0"
+              : "translate-x-0 opacity-100"
+              }`}
           >
             <img
               src={logo}
@@ -123,17 +145,26 @@ function Navbar() {
 
           <button
             type="button"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle Menu"
-            className={`z-[120] flex h-12 w-12 items-center justify-center rounded-full transition-all duration-500 ${
-              isScrolled
-                ? "fixed right-6 top-6 shadow-[0_0_35px_rgba(214,166,60,0.45)]"
-                : "relative"
-            } ${
-              isOpen
+            onClick={() => {
+              if (isMobile) {
+                setIsOpen((prev) => !prev);
+              } else {
+                closeMenu();
+              }
+            }}
+            onMouseEnter={() => {
+              if (!isMobile && isHoverEnabled) {
+                setIsOpen(true);
+              }
+            }}
+            aria-label={isOpen ? "Close Menu" : "Open Menu"}
+            className={`z-[120] flex h-12 w-12 items-center justify-center rounded-full transition-all duration-500 ${isScrolled
+              ? "fixed right-4 top-4 sm:right-6 sm:top-6"
+              : "relative"
+              } ${isOpen
                 ? "rotate-90 bg-[#142B4A] text-white"
                 : "bg-[#C58A19] text-white hover:bg-[#D6A63C]"
-            }`}
+              }`}
           >
             {isOpen ? <X size={26} /> : <Menu size={26} />}
           </button>
@@ -147,11 +178,10 @@ function Navbar() {
 
       <div
         onClick={closeMenu}
-        className={`fixed inset-0 z-[80] transition-all duration-700 ${
-          isOpen
-            ? "visible opacity-100"
-            : "invisible pointer-events-none opacity-0"
-        }`}
+        className={`fixed inset-0 z-[80] transition-all duration-700 ${isOpen
+          ? "visible opacity-100"
+          : "invisible pointer-events-none opacity-0"
+          }`}
       />
 
       {/* =====================================================
@@ -161,11 +191,10 @@ function Navbar() {
 
       <div
         onClick={closeMenu}
-        className={`fixed right-0 top-0 z-[110] h-screen w-[620px] max-w-[95vw] transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
-          isOpen
-            ? "visible translate-x-0 opacity-100"
-            : "invisible pointer-events-none translate-x-full opacity-0"
-        }`}
+        className={`fixed right-0 top-0 z-[110] h-screen w-[620px] max-w-[95vw] transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${isOpen
+          ? "visible translate-x-0 opacity-100"
+          : "invisible pointer-events-none translate-x-full opacity-0"
+          }`}
       >
 
         {/* =================================================
@@ -175,11 +204,10 @@ function Navbar() {
 
         <div
           onClick={(e) => e.stopPropagation()}
-          className={`absolute -right-[220px] top-1/2 h-[450px] w-[450px] -translate-y-1/2 rounded-full bg-[#111]/80 shadow-2xl backdrop-blur-[2  px] transition-all duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${
-            isOpen
-              ? "rotate-0 scale-100 opacity-100"
-              : "rotate-[-35deg] scale-[0.35] opacity-0"
-          }`}
+          className={`absolute -right-[220px] top-1/2 h-[450px] w-[450px] -translate-y-1/2 rounded-full bg-[#111]/80 shadow-2xl backdrop-blur-[2  px] transition-all duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${isOpen
+            ? "rotate-0 scale-100 opacity-100"
+            : "rotate-[-35deg] scale-[0.35] opacity-0"
+            }`}
         >
 
           {/* =================================================
@@ -377,11 +405,10 @@ function Navbar() {
             href="/contact-us"
             onClick={closeMenu}
             className={`absolute left-[150px] top-[410px] flex flex-col items-center gap-2 text-center transition-all 
-              duration-500 ease-out ${
-              isOpen
+              duration-500 ease-out ${isOpen
                 ? "translate-y-0 scale-100 opacity-100 delay-[500ms]"
                 : "translate-y-8 scale-50 opacity-0"
-            }`}
+              }`}
           >
 
             <span className="flex h-12 w-12 items-center justify-center rounded-full border border-[#D6A63C] bg-black/70 text-[#D6A63C] shadow-lg backdrop-blur-md transition-all duration-300 hover:bg-[#D6A63C] hover:text-[#142B4A]">
@@ -420,21 +447,19 @@ function LensMenuItem({
     <a
       href={link.path}
       onClick={closeMenu}
-      className={`absolute ${position} group flex w-[105px] flex-col items-center text-center transition-all duration-500 ease-out ${delay} ${
-        isOpen
-          ? "translate-y-0 scale-100 opacity-100"
-          : "translate-y-8 scale-50 opacity-0"
-      }`}
+      className={`absolute ${position} group flex w-[105px] flex-col items-center text-center transition-all duration-500 ease-out ${delay} ${isOpen
+        ? "translate-y-0 scale-100 opacity-100"
+        : "translate-y-8 scale-50 opacity-0"
+        }`}
     >
 
       {/* ICON */}
 
       <span
-        className={`flex h-12 w-12 items-center justify-center rounded-full border backdrop-blur-md transition-all duration-300 ${
-          active
-            ? "border-[#D6A63C] bg-[#D6A63C] text-[#142B4A] shadow-[0_0_25px_rgba(214,166,60,0.5)]"
-            : "border-[#D6A63C]/70 bg-black/50 text-[#D6A63C] group-hover:bg-[#D6A63C] group-hover:text-[#142B4A] group-hover:shadow-[0_0_25px_rgba(214,166,60,0.5)]"
-        }`}
+        className={`flex h-12 w-12 items-center justify-center rounded-full border backdrop-blur-md transition-all duration-300 ${active
+          ? "border-[#D6A63C] bg-[#D6A63C] text-[#142B4A] shadow-[0_0_25px_rgba(214,166,60,0.5)]"
+          : "border-[#D6A63C]/70 bg-black/50 text-[#D6A63C] group-hover:bg-[#D6A63C] group-hover:text-[#142B4A] group-hover:shadow-[0_0_25px_rgba(214,166,60,0.5)]"
+          }`}
       >
         <Icon size={25} strokeWidth={1.5} />
       </span>
@@ -442,11 +467,10 @@ function LensMenuItem({
       {/* NAME BELOW ICON */}
 
       <span
-        className={`mt-2 whitespace-nowrap text-xs font-semibold transition-all duration-300 ${
-          active
-            ? "text-[#D6A63C]"
-            : "text-white group-hover:text-[#D6A63C]"
-        }`}
+        className={`mt-2 whitespace-nowrap text-xs font-semibold transition-all duration-300 ${active
+          ? "text-[#D6A63C]"
+          : "text-white group-hover:text-[#D6A63C]"
+          }`}
       >
         {link.name}
       </span>

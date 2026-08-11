@@ -11,8 +11,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 
-import founderImage from "../assets/images/founder.png";
-// तुमचा founder image path वेगळा असेल तर तो बदला
+import founderImage from "../assets/images/founder.jpg";
 
 function AboutUs() {
   const whyChooseUs = [
@@ -57,11 +56,34 @@ function AboutUs() {
   return (
     <main className="overflow-hidden bg-white text-[#142B4A]">
 
-      {/* =====================================================
-          HERO SECTION
-      ====================================================== */}
+      <section className="relative overflow-hidden bg-[#081C31] py-28 text-white">
 
-      <section className="relative flex min-h-[70vh] items-center bg-[#F7F5F0] pt-8lg:pt-14">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(214,166,60,0.15),transparent_60%)]" />
+
+        <div className="relative mt-6 mx-auto max-w-7xl px-6 text-center">
+
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-[#D6A63C]">
+            About 9 Elephants Mediaworks
+          </p>
+
+          <h1 className="text-5xl font-bold md:text-7xl">
+            Crafting Stories
+            <span className="block text-[#D6A63C]">
+              That Inspire & Connect
+            </span>
+          </h1>
+
+          <p className="mx-auto mt-8 max-w-3xl text-lg text-white/70">
+            We are a passionate film production company dedicated to creating
+            impactful visual stories through corporate films, commercials,
+            documentaries, digital content, and cinematic productions.
+          </p>
+
+        </div>
+
+      </section>
+
+      <section className="relative flex min-h-[75vh] items-center bg-[#F7F5F0]">
 
         {/* Background Decoration */}
 
@@ -75,7 +97,7 @@ function AboutUs() {
 
           <div className="max-w-2xl">
 
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#D6A63C]/30 bg-white px-5 py-2 text-sm font-semibold tracking-[0.2em] text-[#C58A19] shadow-sm">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#D6A63C]/30 bg-white px-5 py-2 text-sm font-semibold tracking-[0.2em] text-[#C58A19] shadow-sm">
               <Sparkles size={16} />
               ABOUT US
             </div>
@@ -147,7 +169,7 @@ function AboutUs() {
                 <img
                   src={founderImage}
                   alt="Founder of 9 Elephants MediaWorks"
-                  className="h-[520px] w-full object-cover"
+                  className="h-auto w-full object-cover"
                 />
 
               </div>
@@ -178,7 +200,7 @@ function AboutUs() {
           WHO WE ARE
       ====================================================== */}
 
-      <section className="relative bg-white py-24">
+      <section className="relative bg-white py-16 lg:py-24">
 
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
@@ -285,7 +307,7 @@ function AboutUs() {
           WHY CHOOSE US
       ====================================================== */}
 
-      <section className="bg-[#F7F5F0] py-24">
+      <section className="bg-[#F7F5F0] py-16 lg:py-24">
 
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
@@ -365,7 +387,7 @@ function AboutUs() {
           OUR REACH
       ====================================================== */}
 
-      <section className="relative overflow-hidden bg-[#142B4A] py-24 text-white">
+      <section className="relative overflow-hidden bg-[#142B4A] py-16 lg:py-24 text-white">
 
         <div className="absolute -left-40 top-0 h-96 w-96 rounded-full bg-[#D6A63C]/10 blur-3xl" />
 

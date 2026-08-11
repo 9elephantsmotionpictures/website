@@ -145,57 +145,47 @@ function Home() {
           FINAL CTA
       ====================================================== */}
 
-      <section className="relative overflow-hidden py-24 md:py-32">
+      <section className="relative overflow-hidden py-16 sm:py-20 md:py-32">
 
         {/* Background Video */}
-
         <video
           autoPlay
           muted
           loop
           playsInline
+          preload="auto"
           className="absolute inset-0 h-full w-full object-cover"
         >
-
           <source
             src={flashVideo}
             type="video/mp4"
           />
-
         </video>
 
-
         {/* Overlay */}
-
-        <div className="absolute inset-0 bg-white/10" />
-
+        <div className="absolute inset-0 bg-white/20 sm:bg-white/10" />
 
         {/* Content */}
-
-        <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="relative z-10 mx-auto px-5 sm:px-6 lg:px-12">
 
           <div className="max-w-4xl">
 
-            <p className="mb-5 text-sm font-bold uppercase tracking-[0.3em] text-[#D6A63C]">
+            <p className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-[#D6A63C] sm:mb-5 sm:text-sm sm:tracking-[0.3em]">
               Ready to Tell Your Story?
             </p>
 
-            <h2 className="text-4xl font-semibold leading-tight text-[#081C31] md:text-6xl">
-
+            <h2 className="text-xl font-semibold leading-[1.1] text-[#081C31] sm:text-4xl md:text-6xl lg:text-7xl">
               Let's Create
-
               <br />
-
               Something Amazing.
-
             </h2>
 
             <a
               href="/contact-us"
-              className="mt-9 inline-flex items-center gap-3 rounded-full bg-[#D6A63C] px-8 py-4 font-bold text-[#142B4A] transition-all duration-300 hover:gap-5"
+              className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#D6A63C] px-6 py-3.5 text-sm font-bold text-[#142B4A] transition-all duration-300 hover:gap-4 hover:bg-[#142B4A] hover:text-white sm:mt-9 sm:px-8 sm:py-4 sm:text-base"
             >
               Start Your Project
-              <ArrowRight size={20} />
+              <ArrowRight size={18} className="sm:h-5 sm:w-5" />
             </a>
 
           </div>
