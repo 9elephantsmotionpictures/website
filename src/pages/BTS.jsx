@@ -3,7 +3,7 @@ import bts2 from "../assets/images/bts/IMG_2.JPG";
 import bts3 from "../assets/images/bts/IMG_5.JPG";
 import bts4 from "../assets/images/bts/IMG_6.JPG";
 import bts5 from "../assets/images/bts/IMG_7.JPG";
-import bts6 from "../assets/images/bts/IMG_8.JPG";
+import bts6 from "../assets/images/bts/IMG_8.jpg";
 
 
 function BTS() {
