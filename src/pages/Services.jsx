@@ -64,7 +64,7 @@ const heroSlides = [
     subtitle: "Next-generation visuals powered by innovation.",
   },
   {
-    image: service7,
+    image: service7, 
     title: "Educational Videos",
     subtitle: "Complex ideas transformed into engaging visuals.",
   },
