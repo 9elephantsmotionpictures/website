@@ -8,11 +8,11 @@ function ProcessSection() {
 
                 <div className="relative grid gap-10 lg:gap-16 lg:grid-cols-2">
                     <div className="lg:mt-8">
-                        <p className="mb-6 text-sm font-bold uppercase tracking-[0.3em] text-[#C58A19]">
+                        <p className="font-subtitle mb-6 text-sm font-bold uppercase tracking-[0.3em] text-[#C58A19]">
                             How We Work
                         </p>
 
-                        <h2 className="lg:mt-6 text-4xl font-semibold leading-tight text-[#142B4A] md:text-6xl">
+                        <h2 className="font-title lg:mt-6 text-4xl font-semibold leading-tight text-[#142B4A] md:text-6xl">
 
                             From an idea
 
@@ -22,7 +22,7 @@ function ProcessSection() {
 
                         </h2>
 
-                        <p className="mt-7 max-w-lg leading-8 text-[#142B4A]/60">
+                        <p className="font-description mt-7 max-w-lg leading-8 text-[#142B4A]/60">
 
                             Discovery defines the idea, pre-production designs the
                             journey, production captures it, and post-production
@@ -32,7 +32,7 @@ function ProcessSection() {
 
                     </div>
 
-                    <div className="space-y-0 lg:mt-4">
+                    <div className="font-description space-y-0 lg:mt-4">
 
                         {[
                             "Discovery Call",
@@ -50,7 +50,7 @@ function ProcessSection() {
                                     0{index + 1}
                                 </span>
 
-                                <h3 className="text-2xl font-semibold text-[#142B4A]">
+                                <h3 className="text-xl md:text-2xl font-semibold text-[#142B4A]">
                                     {step}
                                 </h3>
 
@@ -61,7 +61,7 @@ function ProcessSection() {
 
                     <a
                         href="/processes"
-                        className="mt-8 flex items-center justify-center gap-3 font-semibold text-[#142B4A] transition hover:text-[#C58A19] lg:absolute lg:top-0 lg:right-0 lg:mt-0"
+                        className="font-description mt-8 flex items-center justify-center gap-3 font-semibold text-[#142B4A] transition hover:text-[#C58A19] lg:absolute lg:top-0 lg:right-0 lg:mt-0"
                     >
                         Explore Our Process
                         <ArrowRight size={18} />

@@ -1,120 +1,133 @@
-  import award1 from "../assets/images/image.png";
-  import award2 from "../assets/images/image.png";
-  import award3 from "../assets/images/image.png";
+import award1 from "../assets/images/image.png";
+import award2 from "../assets/images/image.png";
+import award3 from "../assets/images/image.png";
 import { useEffect, useRef } from "react";
 
-  function NewsAwards() {
-    const news = [
-      {
-        title: "9 Elephants Wins Best Corporate Film Award",
-        date: "15 July 2025",
-        image: award1,
-        description:
-          "Recognized for delivering exceptional visual storytelling and impactful corporate films.",
-      },
-      {
-        title: "Featured In Leading Media Publication",
-        date: "02 June 2025",
-        image: award2,
-        description:
-          "Our innovative production techniques and creative vision were highlighted by industry experts.",
-      },
-      {
-        title: "Crossed 100+ Successful Productions",
-        date: "10 May 2025",
-        image: award3,
-        description:
-          "A major milestone showcasing our dedication to quality filmmaking and client success.",
-      },
-    ];
+function NewsAwards() {
+  const news = [
+    {
+      title: "9 Elephants Wins Best Corporate Film Award",
+      date: "15 July 2025",
+      image: award1,
+      description:
+        "Recognized for delivering exceptional visual storytelling and impactful corporate films.",
+    },
+    {
+      title: "Featured In Leading Media Publication",
+      date: "02 June 2025",
+      image: award2,
+      description:
+        "Our innovative production techniques and creative vision were highlighted by industry experts.",
+    },
+    {
+      title: "Crossed 100+ Successful Productions",
+      date: "10 May 2025",
+      image: award3,
+      description:
+        "A major milestone showcasing our dedication to quality filmmaking and client success.",
+    },
+  ];
 
-const newsRef = useRef(null);
-const awardsRef = useRef(null);
+  const newsRef = useRef(null);
+  const awardsRef = useRef(null);
 
-const newsIntervalRef = useRef(null);
-const awardsIntervalRef = useRef(null);
+  const newsIntervalRef = useRef(null);
+  const awardsIntervalRef = useRef(null);
 
-const startNewsScroll = () => {
-  newsIntervalRef.current = setInterval(() => {
-    const container = newsRef.current;
-    if (!container) return;
+  const startNewsScroll = () => {
+    newsIntervalRef.current = setInterval(() => {
+      const container = newsRef.current;
+      if (!container) return;
 
-    container.scrollTop += 1;
+      container.scrollTop += 1;
 
-    if (
-      container.scrollTop >=
-      container.scrollHeight - container.clientHeight
-    ) {
-      container.scrollTop = 0;
-    }
-  }, 20);
-};
+      if (
+        container.scrollTop >=
+        container.scrollHeight - container.clientHeight
+      ) {
+        container.scrollTop = 0;
+      }
+    }, 20);
+  };
 
-const stopNewsScroll = () => {
-  clearInterval(newsIntervalRef.current);
-};
-
-const startAwardsScroll = () => {
-  awardsIntervalRef.current = setInterval(() => {
-    const container = awardsRef.current;
-    if (!container) return;
-
-    container.scrollTop += 1;
-
-    if (
-      container.scrollTop >=
-      container.scrollHeight - container.clientHeight
-    ) {
-      container.scrollTop = 0;
-    }
-  }, 20);
-};
-
-const stopAwardsScroll = () => {
-  clearInterval(awardsIntervalRef.current);
-};
-
-useEffect(() => {
-  startNewsScroll();
-  startAwardsScroll();
-
-  return () => {
+  const stopNewsScroll = () => {
     clearInterval(newsIntervalRef.current);
+  };
+
+  const startAwardsScroll = () => {
+    awardsIntervalRef.current = setInterval(() => {
+      const container = awardsRef.current;
+      if (!container) return;
+
+      container.scrollTop += 1;
+
+      if (
+        container.scrollTop >=
+        container.scrollHeight - container.clientHeight
+      ) {
+        container.scrollTop = 0;
+      }
+    }, 20);
+  };
+
+  const stopAwardsScroll = () => {
     clearInterval(awardsIntervalRef.current);
   };
-}, []);
+
+  useEffect(() => {
+    startNewsScroll();
+    startAwardsScroll();
+
+    return () => {
+      clearInterval(newsIntervalRef.current);
+      clearInterval(awardsIntervalRef.current);
+    };
+  }, []);
 
 
-    return (
-      <main className="bg-[#FFFDF8]">
+  return (
+    <main className="bg-[#FFFDF8]">
 
-        {/* HERO */}
+      {/* HERO */}
 
-        <section className="relative overflow-hidden bg-[#081C31] py-28 text-white">
+      <section
+        className="
+        relative overflow-hidden
+        bg-[#081C31]
+        py-28 text-white
+      "
+      >
 
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(214,166,60,0.15),transparent_60%)]" />
+        {/* Top Blue Glow */}
+        <div className="pointer-events-none absolute -left-32 -top-32 h-96 w-96 rounded-full bg-blue-500/20 blur-[100px]" />
 
-          <div className="relative mt-5 mx-auto max-w-7xl px-6 text-center">
+        {/* Bottom Blue Glow */}
+        <div className="pointer-events-none absolute -bottom-40 -right-32 h-96 w-96 rounded-full bg-blue-300/20 blur-[100px]" />
 
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-[#D6A63C]">
-              Recognition & Achievements
-            </p>
+        {/* Glossy Shine */}
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(120deg,transparent_20%,rgba(255,255,255,0.06)_45%,transparent_70%)]" />
 
-            <h1 className="text-5xl font-bold md:text-7xl">
-              News & Awards
-            </h1>
+        <div className="relative mt-5 mx-auto max-w-7xl px-6 text-center">
 
-            <p className="mx-auto mt-8 max-w-3xl text-lg text-white/70">
-              Celebrating milestones, media features, achievements and
-              industry recognition earned through creativity and excellence.
-            </p>
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-blue-300">
+            Recognition & Achievements
+          </p>
 
-          </div>
+          <h1 className="text-5xl font-bold md:text-7xl">
+            News & Awards
+          </h1>
 
-        </section>
+          <p className="mx-auto mt-8 max-w-3xl text-lg text-white/70">
+            Celebrating milestones, media features, achievements and
+            industry recognition earned through creativity and excellence.
+          </p>
 
-        {/* NEWS SECTION */}
-       <section className="py-10">
+        </div>
+
+      </section>
+
+      {/* NEWS SECTION */}
+      <section className="py-10">
         <div className="mx-auto max-w-7xl px-6">
 
           <div className="grid gap-8 lg:grid-cols-2">
@@ -235,34 +248,34 @@ useEffect(() => {
         </div>
       </section>
 
-        {/* CTA */}
+      {/* CTA */}
 
-        <section className="bg-[#142B4A] py-24 text-white">
+      <section className="bg-[#142B4A] py-24 text-white">
 
-          <div className="mx-auto max-w-4xl px-6 text-center">
+        <div className="mx-auto max-w-4xl px-6 text-center">
 
-            <h2 className="text-4xl font-bold md:text-6xl">
-              Creating Stories That Get Recognized
-            </h2>
+          <h2 className="text-4xl font-bold md:text-6xl">
+            Creating Stories That Get Recognized
+          </h2>
 
-            <p className="mt-6 text-white/70">
-              From corporate films to documentaries, we create visual
-              experiences that leave a lasting impact.
-            </p>
+          <p className="mt-6 text-white/70">
+            From corporate films to documentaries, we create visual
+            experiences that leave a lasting impact.
+          </p>
 
-            <a
-              href="/contact-us"
-              className="mt-10 inline-flex rounded-full bg-[#D6A63C] px-8 py-4 font-semibold text-[#142B4A] transition hover:bg-white"
-            >
-              Contact Us
-            </a>
+          <a
+            href="/contact-us"
+            className="mt-10 inline-flex rounded-full bg-[#D6A63C] px-8 py-4 font-semibold text-[#142B4A] transition hover:bg-white"
+          >
+            Contact Us
+          </a>
 
-          </div>
+        </div>
 
-        </section>
+      </section>
 
-      </main>
-    );
-  }
+    </main>
+  );
+}
 
-  export default NewsAwards;
+export default NewsAwards;

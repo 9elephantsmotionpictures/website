@@ -103,11 +103,11 @@ function Clients() {
       <section className="overflow-hidden py-20">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-12 text-center">
-            <h2 className="text-4xl font-bold text-[#142B4A] md:text-5xl">
+            <h2 className="font-title text-4xl font-bold text-[#142B4A] md:text-6xl">
               Brands We Worked With
             </h2>
 
-            <p className="mt-4 text-gray-600">
+            <p className="font-subtitle mt-4 md:text-2xl text-gray-600">
               Trusted by companies across multiple industries
             </p>
           </div>

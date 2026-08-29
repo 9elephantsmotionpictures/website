@@ -41,7 +41,7 @@ function Home() {
 
         <div className="relative z-10 px-6 text-center">
 
-          <h1 className="max-w-5xl text-3xl font-semibold leading-[1.05] tracking-tight text-white sm:text-3xl md:text-4xl lg:text-5xl">
+          <h1 className="font-description max-w-5xl text-3xl font-semibold leading-[1.05] tracking-tight text-white sm:text-3xl md:text-4xl lg:text-5xl">
 
             Bringing Your
 
@@ -74,7 +74,7 @@ function Home() {
           INTRO SECTION
       ====================================================== */}
 
-      <section className="py-24 md:py-32">
+      <section className="py-20 md:py-32">
 
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
@@ -82,11 +82,11 @@ function Home() {
 
             <div>
 
-              <p className="mb-5 text-sm font-bold uppercase tracking-[0.3em] text-[#C58A19]">
+              <p className="font-subtitle mb-5 text-sm font-bold uppercase tracking-[0.3em] text-[#C58A19]">
                 Who We Are
               </p>
 
-              <h2 className="max-w-3xl text-4xl font-semibold leading-tight text-[#142B4A] md:text-6xl">
+              <h2 className="font-title max-w-3xl text-4xl font-semibold leading-tight text-[#142B4A] md:text-6xl">
 
                 Stories that connect.
 
@@ -101,7 +101,7 @@ function Home() {
 
             <div>
 
-              <p className="text-lg leading-8 text-[#142B4A]/65">
+              <p className="font-description text-lg leading-8 text-[#142B4A]/65">
 
                 9 Elephants MediaWorks is a creative video production house
                 focused on high-impact visual storytelling. We combine
@@ -112,7 +112,7 @@ function Home() {
 
               <a
                 href="/about-us"
-                className="group mt-7 inline-flex items-center gap-3 font-semibold text-[#142B4A]"
+                className="font-description group mt-7 inline-flex items-center gap-3 font-semibold text-[#142B4A]"
               >
 
                 Discover Our Story
@@ -145,7 +145,7 @@ function Home() {
           FINAL CTA
       ====================================================== */}
 
-      <section className="relative overflow-hidden py-16 sm:py-20 md:py-32">
+      <section className="relative overflow-hidden py-12 sm:py-20 md:py-40">
 
         {/* Background Video */}
         <video
@@ -170,11 +170,11 @@ function Home() {
 
           <div className="max-w-4xl">
 
-            <p className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-[#D6A63C] sm:mb-5 sm:text-sm sm:tracking-[0.3em]">
+            <p className="font-subtitle mb-4 text-xs font-bold uppercase tracking-[0.2em] text-[#D6A63C] sm:mb-5 sm:text-sm sm:tracking-[0.3em]">
               Ready to Tell Your Story?
             </p>
 
-            <h2 className="text-xl font-semibold leading-[1.1] text-[#081C31] sm:text-4xl md:text-6xl lg:text-7xl">
+            <h2 className="font-title text-xl font-semibold leading-[1.1] text-[#081C31] sm:text-4xl md:text-6xl lg:text-7xl">
               Let's Create
               <br />
               Something Amazing.
@@ -182,7 +182,7 @@ function Home() {
 
             <a
               href="/contact-us"
-              className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#D6A63C] px-6 py-3.5 text-sm font-bold text-[#142B4A] transition-all duration-300 hover:gap-4 hover:bg-[#142B4A] hover:text-white sm:mt-9 sm:px-8 sm:py-4 sm:text-base"
+              className="font-description mt-7 inline-flex items-center gap-2 rounded-full bg-[#D6A63C] px-6 py-3.5 text-sm font-bold text-[#142B4A] transition-all duration-300 hover:gap-4 hover:bg-[#142B4A] hover:text-white sm:mt-9 sm:px-8 sm:py-4 sm:text-base"
             >
               Start Your Project
               <ArrowRight size={18} className="sm:h-5 sm:w-5" />

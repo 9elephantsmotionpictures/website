@@ -1,8 +1,8 @@
-import bts1 from "../assets/images/bts/IMG_1.JPG";
-import bts2 from "../assets/images/bts/IMG_2.JPG";
-import bts3 from "../assets/images/bts/IMG_5.JPG";
-import bts4 from "../assets/images/bts/IMG_6.JPG";
-import bts5 from "../assets/images/bts/IMG_7.JPG";
+import bts1 from "../assets/images/bts/IMG_1.jpg";
+import bts2 from "../assets/images/bts/IMG_2.jpg";
+import bts3 from "../assets/images/bts/IMG_5.jpg";
+import bts4 from "../assets/images/bts/IMG_6.jpg";
+import bts5 from "../assets/images/bts/IMG_7.jpg";
 import bts6 from "../assets/images/bts/IMG_8.jpg";
 
 
@@ -21,13 +21,26 @@ function BTS() {
 
       {/* HERO */}
 
-      <section className="relative overflow-hidden bg-[#081C31] py-28 text-white">
+      <section
+        className="
+        relative overflow-hidden
+        bg-[#081C31]
+        py-28 text-white
+      "
+      >
 
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(214,166,60,0.15),transparent_60%)]" />
+        {/* Top Blue Glow */}
+        <div className="pointer-events-none absolute -left-32 -top-32 h-96 w-96 rounded-full bg-blue-500/20 blur-[100px]" />
+
+        {/* Bottom Blue Glow */}
+        <div className="pointer-events-none absolute -bottom-40 -right-32 h-96 w-96 rounded-full bg-blue-400/20 blur-[100px]" />
+
+        {/* Glossy Shine */}
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(120deg,transparent_20%,rgba(255,255,255,0.06)_45%,transparent_70%)]" />
 
         <div className="relative mt-5 mx-auto max-w-7xl px-6 text-center">
 
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-[#D6A63C]">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-blue-300">
             Behind The Scenes
           </p>
 
@@ -171,7 +184,7 @@ function BTS() {
 
       {/* CTA */}
 
-      <section className="bg-[#142B4A] lg:py-24 text-white">
+      <section className="bg-[#142B4A] py-24 text-white">
 
         <div className="mx-auto max-w-4xl px-6 text-center">
 

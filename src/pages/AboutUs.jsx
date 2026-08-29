@@ -56,18 +56,32 @@ function AboutUs() {
   return (
     <main className="overflow-hidden bg-white text-[#142B4A]">
 
-      <section className="relative overflow-hidden bg-[#081C31] py-28 text-white">
+      <section
+        className="
+        relative overflow-hidden
+        bg-[#081C31]
+        py-28 text-white
+      "
+      >
 
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(214,166,60,0.15),transparent_60%)]" />
+        {/* Top Blue Glow */}
+        <div className="pointer-events-none absolute -left-32 -top-32 h-96 w-96 rounded-full bg-blue-400/20 blur-[100px]" />
+
+        {/* Bottom Blue Glow */}
+        <div className="pointer-events-none absolute -bottom-40 -right-32 h-96 w-96 rounded-full bg-blue-400/20 blur-[100px]" />
+
+        {/* Glossy Shine */}
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(120deg,transparent_20%,rgba(255,255,255,0.06)_45%,transparent_70%)]" />
 
         <div className="relative mt-6 mx-auto max-w-7xl px-6 text-center">
 
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-[#D6A63C]">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-blue-300">
             About 9 Elephants Mediaworks
           </p>
 
           <h1 className="text-5xl font-bold md:text-7xl">
             Crafting Stories
+
             <span className="block text-[#D6A63C]">
               That Inspire & Connect
             </span>
@@ -176,7 +190,7 @@ function AboutUs() {
 
               {/* Floating Badge */}
 
-              <div className="absolute -bottom-7 -left-7 flex h-32 w-32 flex-col items-center justify-center rounded-2xl bg-[#142B4A] text-white shadow-2xl">
+              <div className="absolute -bottom-7 -left-7 flex h-32 w-32 flex-col items-center justify-center rounded-2xl bg-[#081C31] text-white shadow-2xl">
                 <span className="text-4xl font-bold text-[#D6A63C]">
                   10+
                 </span>

@@ -2,7 +2,7 @@ import {Film, Sparkles} from "lucide-react";
 
 function WhyChooseUs() {
   return (
-    <section className="bg-[#081C31] py-24 text-white md:py-32">
+    <section className="bg-[#142B4A] py-24 text-white md:py-32">
 
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
@@ -15,17 +15,17 @@ function WhyChooseUs() {
                 size={35}
               />
 
-              <h2 className="text-4xl font-semibold leading-tight md:text-6xl">
+              <h2 className="font-title text-4xl font-semibold leading-tight md:text-6xl">
 
-                Creativity meets
+                Creativity Meets
 
                 <span className="block text-[#D6A63C]">
-                  technology.
+                  Technology.
                 </span>
 
               </h2>
 
-              <p className="mt-7 max-w-xl leading-8 text-white/55">
+              <p className="font-description mt-7 max-w-xl leading-8 text-white/55">
 
                 Every frame is engineered with a blend of creativity and
                 technology. Our team works with modern filmmaking tools to
@@ -36,9 +36,9 @@ function WhyChooseUs() {
             </div>
 
 
-            <div className="grid grid-cols-1 gap-px bg-white/10 sm:grid-cols-3">
+            <div className="font-description grid grid-cols-1 gap-px bg-white/10 sm:grid-cols-3">
 
-              <div className="bg-[#081C31] p-7">
+              <div className="bg-[#142B4A] p-7">
 
                 <h3 className="text-3xl font-semibold text-[#D6A63C]">
                   97%
@@ -51,7 +51,7 @@ function WhyChooseUs() {
               </div>
 
 
-              <div className="bg-[#081C31] p-7">
+              <div className="bg-[#142B4A] p-7">
 
                 <h3 className="text-3xl font-semibold text-[#D6A63C]">
                   450+
@@ -64,7 +64,7 @@ function WhyChooseUs() {
               </div>
 
 
-              <div className="bg-[#081C31] p-7">
+              <div className="bg-[#142B4A] p-7">
 
                 <h3 className="text-3xl font-semibold text-[#D6A63C]">
                   10+

@@ -7,40 +7,92 @@ function Processes() {
   const steps = [
     {
       image: process1,
+      number: "01",
       title: "Discovery Call",
+      subtitle: "Understanding the Vision",
       description:
         "Understanding your vision, goals, audience, and requirements to build the perfect storytelling strategy.",
+      points: [
+        "Client enquiry & requirement gathering",
+        "Initial meeting & creative discussion",
+        "Project scope & deliverables",
+        "Budget estimation",
+        "Project finalization",
+      ],
     },
+
     {
       image: process2,
-      title: "Script & Storyboarding",
+      number: "02",
+      title: "Pre-Production",
+      subtitle: "Planning Before Production",
       description:
-        "Transforming ideas into structured scripts and visual storyboards before production begins.",
+        "Transforming ideas into structured scripts, visual plans, schedules, and production requirements before the shoot begins.",
+      points: [
+        "Detailed inputs & references from client",
+        "Concept research & creative development",
+        "Script & screenplay development",
+        "Shot division & visual planning",
+        "Production scheduling & planning",
+        "Equipment & material transportation",
+      ],
     },
+
     {
       image: process3,
+      number: "03",
       title: "Production",
+      subtitle: "Bringing the Vision to Life",
       description:
-        "Capturing stunning visuals with professional equipment, lighting, sound, and cinematic direction.",
+        "Capturing stunning visuals through professional cinematography, direction, lighting, sound, and on-location production.",
+      points: [
+        "Scheduled shoot execution",
+        "Professional production crew",
+        "Cinematography & direction",
+        "Lighting, sound & camera setup",
+        "On-location production management",
+        "Quality-controlled footage capture",
+      ],
     },
+
     {
       image: process4,
+      number: "04",
       title: "Post-Production",
+      subtitle: "Crafting the Final Film",
       description:
-        "Editing, color grading, sound design, motion graphics, and final polishing to create impactful films.",
+        "Transforming captured footage into a polished final film through editing, VFX, sound design, voice-over, and mastering.",
+      points: [
+        "Professional video editing",
+        "VFX & visual enhancement",
+        "Audio recording & sound design",
+        "Voice-over integration",
+        "Client review & feedback round",
+        "Final mastering & delivery",
+      ],
     },
   ];
 
   return (
     <>
       {/* Hero */}
-      <section className="bg-[#081C31] py-28 text-white">
-        <div className="mx-auto max-w-7xl mt-5 px-6 text-center">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-[#D6A63C]">
-            9 ELEPHANTS
-          </p>
+      <section
+        className="
+        relative overflow-hidden py-28
+        bg-[#081C31]
+      "
+      >
+        {/* Glossy glow */}
+        <div className="pointer-events-none absolute -left-32 -top-32 h-96 w-96 rounded-full bg-blue-400/20 blur-[100px]" />
 
-          <h1 className="text-5xl font-bold md:text-7xl">
+        <div className="pointer-events-none absolute -bottom-40 -right-32 h-96 w-96 rounded-full bg-blue-400/20 blur-[100px]" />
+
+        {/* Glossy shine */}
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(120deg,transparent_20%,rgba(255,255,255,0.06)_45%,transparent_70%)]" />
+
+        <div className="relative z-10 mt-5 mx-auto max-w-7xl px-6 text-center">
+
+          <h1 className="text-5xl font-bold text-white md:text-7xl">
             Our Process
           </h1>
 
@@ -48,12 +100,13 @@ function Processes() {
             Discovery defines the idea, pre-production designs the journey,
             production captures it, and post-production completes the story.
           </p>
+
         </div>
       </section>
 
       {/* Process Steps */}
       <section className="bg-[#F7F5F0] py-16 lg:py-24">
-        <div className="mx-auto max-w-5xl px-6">
+        <div className="mx-auto max-w-6xl px-6">
 
           <div className="grid gap-10 lg:gap-30 md:grid-cols-2">
 
@@ -90,12 +143,40 @@ function Processes() {
                     {step.title}
                   </h3>
 
-                  <p className="mt-5 leading-7 text-gray-600">
-                    {step.description}
-                  </p>
+                  <h4 className="mt-3 text-lg font-semibold text-[#142B4A]">
+                    {step.subtitle}
+                  </h4>
+
+                  <div className="mt-4 border-t border-gray-200 pt-4">
+
+                    <ul className="space-y-2">
+
+                      {step.points.map((point, pointIndex) => (
+
+                        <li
+                          key={pointIndex}
+                          className="flex items-start gap-3 text-sm leading-6 text-gray-600"
+                        >
+
+                          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#D6A63C]" />
+
+                          <span>
+                            {point}
+                          </span>
+
+                        </li>
+
+                      ))}
+
+                    </ul>
+
+                  </div>
+                  
                 </div>
               </div>
             ))}
+
+
 
           </div>
 
