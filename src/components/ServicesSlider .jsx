@@ -2,19 +2,29 @@ import {
   ArrowRight,
   ArrowUpRight,
 } from "lucide-react";
+import service1 from "../assets/images/services/service1.png";
+import service2 from "../assets/images/services/service2.png";
+import service3 from "../assets/images/services/service3.png";
+import service4 from "../assets/images/services/service4.png";
+import service5 from "../assets/images/services/service5.png";
+import service6 from "../assets/images/services/service6.png";
+import service7 from "../assets/images/services/service7.png";
+import service8 from "../assets/images/services/service8.png";
+import service9 from "../assets/images/services/service9.png";
+
 
 function ServicesSlider() {
-  const services = [
-    "Corporate Films",
-    "Ad Films",
-    "Promotional Videos",
-    "Documentaries",
-    "Podcasts",
-    "AI Videos",
-    "Educational Videos",
-    "Influencer Videos",
-    "Tutorial Videos",
-  ];
+const services = [
+  { title: "Corporate Films", image: service1 },
+  { title: "Ad Films", image: service2 },
+  { title: "Promotional Videos", image: service3 },
+  { title: "Documentaries", image: service4 },
+  { title: "Podcasts", image: service5 },
+  { title: "AI Videos", image: service6 },
+  { title: "Educational Videos", image: service7 },
+  { title: "Influencer Videos", image: service8 },
+  { title: "Tutorial Videos", image: service9 },
+];
 
   return (
     <>
@@ -80,28 +90,29 @@ function ServicesSlider() {
                 {/* First Set */}
 
                 {services.map((service, index) => (
-
                   <a
-                    key={`first-${service}`}
-                    to="/services"
-                    className="service-card group"
+                    key={`first-${service.title}`}
+                    href="/services"
+                    className="service-item group"
                   >
+                    <div className="service-card">
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        className="service-card-image"
+                      />
 
-                    <span className="service-number">
-                      0{index + 1}
-                    </span>
+                      <div className="service-card-overlay" />
 
-                    <h3>
-                      {service}
+                      {/* <span className="service-number">
+                        0{index + 1}
+                      </span> */}
+                    </div>
+
+                    <h3 className="service-title">
+                      {service.title}
                     </h3>
-
-                    <ArrowUpRight
-                      size={24}
-                      className="service-arrow"
-                    />
-
                   </a>
-
                 ))}
 
 
@@ -109,31 +120,31 @@ function ServicesSlider() {
                           Seamless Infinite Slider
                       */}
 
-                {services.map((service, index) => (
+                  {services.map((service, index) => (
+                    <a
+                      key={`second-${service.title}`}
+                      href="/services"
+                      className="service-item group"
+                    >
+                      <div className="service-card">
+                        <img
+                          src={service.image}
+                          alt={service.title}
+                          className="service-card-image"
+                        />
 
-                  <a
-                    key={`second-${service}`}
-                    to="/services"
-                    className="service-card group"
-                  >
+                        <div className="service-card-overlay" />
 
-                    <span className="service-number">
-                      0{index + 1}
-                    </span>
+                        {/* <span className="service-number">
+                          0{index + 1}
+                        </span> */}
+                      </div>
 
-                    <h3>
-                      {service}
-                    </h3>
-
-                    <ArrowUpRight
-                      size={24}
-                      className="service-arrow"
-                    />
-
-                  </a>
-
-                ))}
-
+                      <h3 className="service-title">
+                        {service.title}
+                      </h3>
+                    </a>
+                  ))}
               </div>
 
             </div>
@@ -148,7 +159,6 @@ function ServicesSlider() {
               ================================================== */}
 
         <style>{`
-      
                 .service-slider {
                   overflow: hidden;
                   width: 100%;
@@ -164,20 +174,73 @@ function ServicesSlider() {
                 .service-track:hover {
                   animation-play-state: paused;
                 }
-      
-                .service-card {
-                  position: relative;
-                  width: 280px;
-                  min-width: 280px;
-                  height: 190px;
-                  padding: 28px;
-                  display: flex;
-                  flex-direction: column;
-                  justify-content: space-between;
-                  border: 1px solid rgba(255,255,255,0.12);
-                  background: rgba(255,255,255,0.03);
-                  transition: all 0.5s ease;
-                }
+                    .service-item {
+                width: 280px;
+                min-width: 280px;
+                text-decoration: none;
+                color: white;
+              }
+
+              .service-title {
+                margin-top: 16px;
+                font-size: 20px;
+                font-weight: 600;
+                line-height: 1.2;
+                color: white;
+                text-align: center;
+
+                transition: color 0.3s ease;
+              }
+
+              .service-item:hover .service-title {
+                color: #D6A63C;
+              }
+
+                  .service-card {
+                    position: relative;
+                    width: 280px;
+                    height: 190px;
+                    padding: 28px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    overflow: hidden;
+                    border: 1px solid rgba(255,255,255,0.12);
+                    background: #142B4A;
+                    transition: all 0.5s ease;
+                  }
+                  .service-card-image {
+                    position: absolute;
+                    inset: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    z-index: 0;
+                    transition: transform 0.6s ease;
+                  }
+
+                  .service-card-overlay {
+                    position: absolute;
+                    inset: 0;
+                    z-index: 1;
+                    background: linear-gradient(
+                      to top,
+                      rgba(8, 22, 41, 0.95),
+                      rgba(8, 22, 41, 0.35),
+                      rgba(8, 22, 41, 0.2)
+                    );
+                  }
+
+                  .service-card:hover .service-card-image {
+                    transform: scale(1.08);
+                  }
+
+                  .service-card .service-number,
+                  .service-card h3,
+                  .service-card .service-arrow {
+                    position: relative;
+                    z-index: 2;
+                  }
       
                 .service-card:hover {
                   background: #D6A63C;
@@ -228,25 +291,29 @@ function ServicesSlider() {
                   }
                 }
       
-                @media (max-width: 768px) {
-      
-                  .service-track {
-                    gap: 14px;
-                    animation-duration: 30s;
+                  @media (max-width: 768px) {
+
+                    .service-track {
+                      gap: 14px;
+                      animation-duration: 30s;
+                    }
+
+                    .service-item {
+                      width: 240px;
+                      min-width: 240px;
+                    }
+
+                    .service-card {
+                      width: 240px;
+                      height: 170px;
+                      padding: 22px;
+                    }
+
+                    .service-title {
+                      font-size: 18px;
+                      margin-top: 12px;
+                    }
                   }
-      
-                  .service-card {
-                    width: 240px;
-                    min-width: 240px;
-                    height: 170px;
-                    padding: 22px;
-                  }
-      
-                  .service-card h3 {
-                    font-size: 19px;
-                  }
-      
-                }
       
               `}</style>
 

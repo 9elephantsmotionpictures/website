@@ -37,6 +37,7 @@ body {
   0% {
     transform: translateY(0);
   }
+
   100% {
     transform: translateY(-50%);
   }
@@ -48,4 +49,8 @@ body {
 
 .vertical-scroll:hover {
   animation-play-state: paused;
+}
+
+* {
+  font-family: "Manrope", sans-serif;
 }
