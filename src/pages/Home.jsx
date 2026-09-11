@@ -4,7 +4,7 @@ import {
   Film,
   Video,
 } from "lucide-react";
-
+import { useEffect, useRef, useState } from "react";
 import heroVideo from "../assets/videos/hero-video.mp4";
 import flashVideo from "../assets/videos/flash.mp4";
 
@@ -15,11 +15,34 @@ import WhyChooseUs from "../components/WhyChooseUs";
 
 
 function Home() {
+    const heroVideoRef = useRef(null);
+  const [showHeroText, setShowHeroText] = useState(true);
 
+  useEffect(() => {
+    const video = heroVideoRef.current;
+    if (!video) return;
+
+    const handleTimeUpdate = () => {
+      const time = video.currentTime;
+
+      if (time >= 7 && time < 18) {
+        setShowHeroText(false);
+      } else {
+        setShowHeroText(true);
+      }
+    };
+
+    video.addEventListener("timeupdate", handleTimeUpdate);
+
+    return () => {
+      video.removeEventListener("timeupdate", handleTimeUpdate);
+    };
+  }, []);
   return (
     <main className="overflow-hidden bg-[#FFFDF8] text-[#142B4A]">
       <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#081C31]">
         <video
+        ref={heroVideoRef}
           autoPlay
           muted
           loop
@@ -41,8 +64,19 @@ function Home() {
 
         <div className="relative z-10 px-6 text-center">
 
-          <h1 className="font-description max-w-5xl text-3xl font-semibold leading-[1.05] tracking-tight text-white sm:text-3xl md:text-4xl lg:text-5xl">
-
+          <h1
+            className={`
+              font-description max-w-5xl text-3xl font-semibold
+              leading-[1.05] tracking-tight text-white
+              sm:text-3xl md:text-4xl lg:text-5xl
+              transition-all duration-3000 ease-in-out
+              ${
+                showHeroText
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-4"
+              }
+            `}
+          >
             Bringing Your
 
             <span className="block text-[#D6A63C]">
@@ -50,14 +84,13 @@ function Home() {
             </span>
 
             Through Video.
-
           </h1>
 
         </div>
 
         {/* Scroll Indicator */}
 
-        <div className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-3 md:flex">
+        {/* <div className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-3 md:flex">
 
           <span className="text-[10px] uppercase tracking-[0.4em] text-white/50">
             Scroll to Explore
@@ -65,7 +98,7 @@ function Home() {
 
           <div className="h-12 w-px bg-gradient-to-b from-[#D6A63C] to-transparent" />
 
-        </div>
+        </div> */}
 
       </section>
 
