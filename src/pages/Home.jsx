@@ -82,13 +82,13 @@ function Home() {
 
             <div>
 
-              <p className="font-subtitle mb-5 text-sm font-bold uppercase tracking-[0.3em] text-[#C58A19]">
+              <p className="font-subtitle mb-5 text-sm font-bold uppercase tracking-[0.3em] text-[#C58A19] ml-2">
                 Who We Are
               </p>
 
               <h2 className="font-title max-w-3xl text-4xl font-semibold leading-tight text-[#142B4A] md:text-6xl">
 
-                Stories that connect.
+                <b>Stories that connect.</b>
 
                 <span className="block text-[#C58A19]">
                   Visuals that inspire.

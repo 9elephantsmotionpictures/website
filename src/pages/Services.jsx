@@ -462,10 +462,7 @@ function Services() {
 
             </div>
 
-            <p className="max-w-md text-sm leading-7 text-gray-500">
-              Every project is crafted with a perfect combination of
-              storytelling, technology and cinematic creativity.
-            </p>
+            
 
           </div>
 

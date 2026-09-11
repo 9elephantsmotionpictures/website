@@ -82,7 +82,7 @@ function Footer() {
                   className="mt-0.5 text-[#D6A63C]"
                 />
 
-                <p>+91 77689 31234</p>
+                <p>+91 9272446812</p>
               </div>
 
               <div className="flex items-start gap-3">

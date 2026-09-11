@@ -42,7 +42,7 @@ function AboutUs() {
       icon: Award,
     },
     {
-      value: "450+",
+      value: "500+",
       label: "Projects Delivered",
       icon: Clapperboard,
     },
@@ -75,7 +75,7 @@ function AboutUs() {
 
         <div className="relative mt-6 mx-auto max-w-7xl px-6 text-center">
 
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-blue-300">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em]  text-[#D6A63C]">
             About 9 Elephants Mediaworks
           </p>
 
@@ -336,7 +336,7 @@ function AboutUs() {
             <h2 className="mt-4 text-4xl font-bold text-[#142B4A] sm:text-5xl">
               Creativity Meets
               <span className="text-[#C58A19]">
-                {" "}Professional Excellence
+                {"  "}Professional Excellence
               </span>
             </h2>
 

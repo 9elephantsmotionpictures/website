@@ -124,50 +124,26 @@ function ContactUs() {
         <div className="absolute right-[15%] top-1/2 h-80 w-80 -translate-y-1/2 rounded-full bg-[#D6A63C]/10 blur-[120px]" />
 
 
-        {/* CONTENT */}
+        <div className="relative mt-6 mx-auto max-w-7xl px-6 text-center">
 
-        <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-32 lg:px-8">
+  <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-[#D6A63C]">
+    Contact 9 Elephants Mediaworks
+  </p>
 
-          <div className="max-w-4xl pt-30">
+  <h1 className="text-5xl font-bold md:text-7xl">
+    Let's Create
 
+    <span className="block text-[#D6A63C]">
+      Something Great
+    </span>
+  </h1>
 
-            {/* DESCRIPTION */}
+  <p className="mx-auto mt-8 max-w-3xl text-lg text-white/70">
+    Have a story to tell or a project in mind? Let’s connect and bring your
+    vision to life.
+  </p>
 
-            <p className="mt-8 max-w-2xl text-lg leading-8 text-white/70 md:text-xl">
-
-              Ready to tell your story?
-
-              <br />
-
-              Reach out to The 9 Elephants MediaWorks and
-              let's bring your vision to life through powerful
-              cinematic storytelling.
-
-            </p>
-
-
-            {/* HERO BUTTON */}
-
-            <a
-              href="#contact-form"
-              className="mt-9 inline-flex items-center gap-3 rounded-full bg-[#D6A63C] px-8 py-4 font-bold text-[#142B4A] transition-all duration-300 hover:gap-5 hover:bg-white"
-            >
-              Start Your Project
-              <ArrowRight size={20} />
-            </a>
-
-          </div>
-
-          {/* BOTTOM LABEL */}
-
-          <div className="absolute bottom-8 left-6 hidden items-center gap-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/40 lg:left-10 lg:flex">
-
-            <span className="h-px w-12 bg-[#D6A63C]" />
-
-            9 ELEPHANTS MEDIAWORKS
-
-          </div>
-        </div>
+</div>
 
 
       </section>
@@ -262,7 +238,7 @@ function ContactUs() {
                 {/* PHONE */}
 
                 <a
-                  href="tel:+917768931234"
+                  href="tel:+919272446812"
                   className="group flex items-center gap-5"
                 >
 
@@ -279,7 +255,7 @@ function ContactUs() {
                     </span>
 
                     <span className="mt-1 block text-base font-semibold text-[#142B4A]">
-                      +91 77689 31234
+                      +91 9272446812
                     </span>
 
                   </span>

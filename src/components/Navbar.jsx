@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import { useState, useEffect } from "react";
 
-import logo from "../assets/images/logo.png";
+import logo from "../assets/images/logo2.png";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -135,7 +135,7 @@ function Navbar() {
             <img
               src={logo}
               alt="9 Elephants"
-              className="h-20 w-auto object-contain"
+              className="h-30 w-auto object-contain"
             />
           </a>
 
