@@ -6,7 +6,7 @@ import {
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import heroVideo from "../assets/videos/hero-video.mp4";
-import flashVideo from "../assets/videos/flash.mp4";
+
 
 import ServicesSlider from "../components/ServicesSlider ";
 import ProcessSection from "../components/ProcessSection";
@@ -178,54 +178,50 @@ function Home() {
           FINAL CTA
       ====================================================== */}
 
-      <section className="relative overflow-hidden py-12 sm:py-20 md:py-40">
+      {/* =====================================================
+    FINAL CTA
+====================================================== */}
+        <section className="relative flex min-h-[500px] items-center justify-center overflow-hidden bg-[#081C31] py-20 sm:min-h-[600px] md:min-h-[700px]">
 
-        {/* Background Video */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          className="absolute inset-0 h-full w-full object-cover"
-        >
-          <source
-            src={flashVideo}
-            type="video/mp4"
-          />
-        </video>
+  {/* Cinematic Top-to-Text Flash */}
+  <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
 
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-white/20 sm:bg-white/10" />
+    <div className="cta-light-beam" />
 
-        {/* Content */}
-        <div className="relative z-10 mx-auto px-5 sm:px-6 lg:px-12">
+    <div className="cta-light-core" />
 
-          <div className="max-w-4xl">
+  </div>
 
-            <p className="font-subtitle mb-4 text-xs font-bold uppercase tracking-[0.2em] text-[#D6A63C] sm:mb-5 sm:text-sm sm:tracking-[0.3em]">
-              Ready to Tell Your Story?
-            </p>
+  {/* Content */}
+  <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center px-5 text-center sm:px-6 lg:px-12">
 
-            <h2 className="font-title text-xl font-semibold leading-[1.1] text-[#081C31] sm:text-4xl md:text-6xl lg:text-7xl">
-              Let's Create
-              <br />
-              Something Amazing.
-            </h2>
+    <p className="cta-content font-subtitle mb-5 text-xs font-bold uppercase tracking-[0.3em] text-[#D6A63C] sm:text-sm">
+      Ready to Tell Your Story?
+    </p>
 
-            <a
-              href="/contact-us"
-              className="font-description mt-7 inline-flex items-center gap-2 rounded-full bg-[#D6A63C] px-6 py-3.5 text-sm font-bold text-[#142B4A] transition-all duration-300 hover:gap-4 hover:bg-[#142B4A] hover:text-white sm:mt-9 sm:px-8 sm:py-4 sm:text-base"
-            >
-              Start Your Project
-              <ArrowRight size={18} className="sm:h-5 sm:w-5" />
-            </a>
+    <h2 className="cta-content font-title text-4xl font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
+      Let's Create
+      <br />
+      <span className="text-[#D6A63C]">
+        Something Amazing.
+      </span>
+    </h2>
 
-          </div>
+    <a
+      href="/contact-us"
+      className="cta-button font-description mt-9 inline-flex items-center gap-3 rounded-full border border-[#D6A63C]/40 bg-[#D6A63C] px-7 py-4 text-sm font-bold text-[#081C31] shadow-[0_10px_40px_rgba(214,166,60,0.25)] transition-all duration-500 hover:gap-5 hover:bg-white hover:shadow-[0_15px_50px_rgba(255,255,255,0.15)] sm:px-9 sm:py-4 sm:text-base"
+    >
+      Start Your Project
 
-        </div>
+      <ArrowRight
+        size={19}
+        className="transition-transform duration-500"
+      />
+    </a>
 
-      </section>
+  </div>
+
+</section>
 
     </main>
   );

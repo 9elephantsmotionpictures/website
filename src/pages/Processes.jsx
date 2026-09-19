@@ -1,7 +1,7 @@
-import process1 from "../assets/images/discovery.jfif";
-import process2 from "../assets/images/script.jfif";
-import process3 from "../assets/images/production.jfif";
-import process4 from "../assets/images/post-production.jfif";
+import process1 from "../assets/images/DISCOVERY.png";
+import process2 from "../assets/images/PREPRODUCTION.png";
+import process3 from "../assets/images/PRODUCTION.jpg";
+import process4 from "../assets/images/POSTPRODUCTION.jpg";
 
 function Processes() {
   const steps = [

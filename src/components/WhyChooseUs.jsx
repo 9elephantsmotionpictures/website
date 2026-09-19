@@ -54,7 +54,7 @@ function WhyChooseUs() {
               <div className="bg-[#142B4A] p-7">
 
                 <h3 className="text-3xl font-semibold text-[#D6A63C]">
-                  450+
+                  500+
                 </h3>
 
                 <p className="mt-3 text-sm text-white/50">

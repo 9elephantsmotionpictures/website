@@ -17,15 +17,15 @@ import {
 } from "lucide-react";
 
 
-import service1 from "../assets/images/services/service-1.jfif";
-import service2 from "../assets/images/services/service-2.jfif";
-import service3 from "../assets/images/services/service-3.jfif";
-import service4 from "../assets/images/services/service-4.jfif";
-import service5 from "../assets/images/services/service-5.jfif";
-import service6 from "../assets/images/services/service-6.jfif";
-import service7 from "../assets/images/services/service-7.jfif";
-import service8 from "../assets/images/services/service-8.jfif";
-import service9 from "../assets/images/services/service-9.jfif";
+import service1 from "../assets/images/services/S1.png";
+import service2 from "../assets/images/services/S2.JPG";
+import service3 from "../assets/images/services/S3.jpeg";
+import service4 from "../assets/images/services/S4.jpg";
+import service5 from "../assets/images/services/S5.jpg";
+import service6 from "../assets/images/services/S6.jpg";
+import service7 from "../assets/images/services/S7.jpg";
+import service8 from "../assets/images/services/S8.jpg";
+import service9 from "../assets/images/services/S9.png";
 
 
 /* =====================================================
@@ -321,9 +321,9 @@ function Services() {
               className="mt-8 animate-[fadeUp_1s_ease-out]"
             >
 
-              <h2 className="text-2xl font-semibold md:text-3xl">
+              {/* <h2 className="text-2xl font-semibold md:text-3xl">
                 {heroSlides[currentSlide].title}
-              </h2>
+              </h2> */}
 
               <p className="mt-3 max-w-xl text-base leading-7 text-white/80 md:text-lg">
                 {heroSlides[currentSlide].subtitle}
