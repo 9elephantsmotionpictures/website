@@ -36,7 +36,7 @@ import bts34 from "../assets/images/bts/IMG_34.JPG";
 import bts35 from "../assets/images/bts/IMG_35.JPG";
 import bts36 from "../assets/images/bts/IMG_36.jpg";
 import bts37 from "../assets/images/bts/IMG_37.jpg";
-import bts38 from "../assets/images/bts/IMG_38.jpg";
+import bts38 from "../assets/images/bts/IMG_38.jpg"; 
 import bts39 from "../assets/images/bts/IMG_39.jpg";
 import bts40 from "../assets/images/bts/IMG_40.jpg";
 import bts41 from "../assets/images/bts/IMG_41.jpg";
